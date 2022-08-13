@@ -15,7 +15,9 @@ while True:
        elif game_difficulty == "n":
            run_game_hard()
        else:
+           print()
            print("Oh jeez, worng input. Next time select 'y' for YES and 'n' for NO.")
+           print()
            continue
 
     elif main_menu == "b":
