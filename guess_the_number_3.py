@@ -1,15 +1,12 @@
 from functions import *
 
-# defiitions
-
-
 # initialisation:
 while True:
     main_menu = str(input("Would you like to A) play a new game, B) see the best scores, or C) quit? ")).lower()
 
     if main_menu == "a":
        print()
-       game_difficulty = str(input("Do you want to play the game with hits? (Y/N) ")).lower()
+       game_difficulty = str(input("Do you want to play the game with hints? (Y/N) ")).lower()
        if game_difficulty == "y":
            run_game_easy()
        elif game_difficulty == "n":

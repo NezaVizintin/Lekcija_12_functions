@@ -16,25 +16,26 @@ def run_game_easy():
 
         try:
             guess = int(guess)
-
-            if guess == secret:
-                score_list = get_top_score()
-                score_list.append({"attempts": attempts, "date": str(datetime.datetime.now()), "name": name, "wrong_guesses": wrong_guesses})
-                with open("score_list.json", "w") as score_file:
-                    score_file.write(json.dumps(score_list))
-                print("You guessed it! The secret number is " + str(guess))
-                print("Attempts needed: " + str(attempts))
-                break
-            elif guess < secret:
-                wrong_guesses.append(guess)
-                attempts += 1
-                print("Not quite there, try going a bit higher!")
-            elif guess > secret:
-                wrong_guesses.append(guess)
-                attempts += 1
-                print("Not quite there, try going a bit lower!")
         except:
             print("Oops, that's not a valid number. Please enter a number between (including) 1 and 30.")
+
+        if guess == secret:
+            score_list = get_top_score()
+            score_list.append({"attempts": attempts, "date": str(datetime.datetime.now()), "name": name, "wrong_guesses": wrong_guesses})
+            with open("score_list.json", "w") as score_file:
+                score_file.write(json.dumps(score_list))
+            print("You guessed it! The secret number is " + str(guess))
+            print("Attempts needed: " + str(attempts))
+            break
+        elif guess < secret:
+            wrong_guesses.append(guess)
+            attempts += 1
+            print("Not quite there, try going a bit higher!")
+        elif guess > secret:
+            wrong_guesses.append(guess)
+            attempts += 1
+            print("Not quite there, try going a bit lower!")
+
 
 def run_game_hard():
     wrong_guesses = []
