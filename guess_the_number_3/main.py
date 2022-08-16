@@ -1,4 +1,4 @@
-from functions import *
+from guess_the_number_3.functions import *
 
 # initialisation:
 while True:

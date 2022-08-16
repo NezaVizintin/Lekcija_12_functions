@@ -53,7 +53,7 @@ def run_game_hard():
 
             if guess == secret:
                 score_list = get_top_score()
-                # -------- improve score list so that it stores game difficulty and show top results each seperately --------
+                # -------- improve score list so that it stores game difficulty and shows top results for each  --------
                 score_list.append({"attempts": attempts, "date": str(datetime.datetime.now()), "name": name, "wrong_guesses": wrong_guesses})
                 with open("score_list.json", "w") as score_file:
                     score_file.write(json.dumps(score_list))
