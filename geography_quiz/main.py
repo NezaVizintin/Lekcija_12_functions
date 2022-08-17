@@ -6,13 +6,12 @@ import random
 
 def run_game():
     try:
-        print(CountryInfo(country).capital())
         correct_answer_boolean = True
         while correct_answer_boolean == True:
             answer = str(input("What is the capital of {0}? ".format(country))).lower()
             if answer == str(CountryInfo(country).capital()).lower():
                 print("Well done!")
-                correct_answer_boolean = False # izboljšaj loop https://www.geeksforgeeks.org/how-to-break-out-of-multiple-loops-in-python/
+                correct_answer_boolean = False
             else:
                 print("Sorry, try again!")
     except:
@@ -25,7 +24,7 @@ def random_country():
 
 while True:
     country = random_country()
-    continue_playing = str(input("Do you want to guess a capital? (Y/N) ")).lower()  # error: prints twice if try doesn't work
+    continue_playing = str(input("Do you want to guess a capital? (Y/N) ")).lower()
     if continue_playing == "y" or continue_playing == "yes":
         run_game()
     elif continue_playing == "n" or continue_playing == "no":
